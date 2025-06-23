@@ -1,17 +1,19 @@
 # Restaurant Ratings Analysis
 
 ## Table of Contents
-- [Case Study](#case-study)
-- [Dataset Description](#-dataset-description)
+- [Project Description](#Project Description)
+- [Dataset Description](#dataset-description)
 - [ER Diagram](#-er-diagram)
-- [Data Cleaning](#-data-cleaning)
-- [Calculated Fields](#-calculated-fields)
-- [Data Analysis & Insights](#-data-analysis--insights)
-- [Dashboard](#-dashboard)
+- [Data Cleaning](#data-cleaning)
+- [Calculated Fields (DAX)](#calculated-fields)
+- [Data Analysis & Insights](#data-analysis--insights)
+- [Dashboard](#dashboard)
 
 
 ## Project Description
 This project uses Power BI to analyze restaurant review data, aiming to uncover patterns in customer satisfaction and dissatisfaction. The focus is on food quality, service experience, pricing concerns, and customer behavior to provide actionable insights.
+
+## Dataset Description
 
 ### 1. Consumers
 
