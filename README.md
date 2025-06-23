@@ -1,13 +1,13 @@
 # Restaurant Ratings Analysis
 
 ## Table of Contents
-- [Project Description](#Project Description)
+- [Project Description](#project-description)
 - [Dataset Description](#dataset-description)
-- [ER Diagram](#-er-diagram)
+- [ER Diagram](#er-diagram)
 - [Data Cleaning](#data-cleaning)
-- [Calculated Fields (DAX)](#calculated-fields)
+- [Calculated Fields (DAX)](#calculated-fields-dax)
 - [Data Analysis & Insights](#data-analysis--insights)
-- [Dashboard](#dashboard)
+- [Dashboards](#dashboards)
 
 
 ## Project Description
