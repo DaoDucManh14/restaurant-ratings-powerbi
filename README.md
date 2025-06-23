@@ -1,12 +1,13 @@
 # Restaurant Ratings Analysis
 
 ## Table of Contents
-- [Case Study Overview](#-case-study-overview)
+- [Case Study](#case-study)
 - [Dataset Description](#-dataset-description)
+- [ER Diagram](#-er-diagram)
 - [Data Cleaning](#-data-cleaning)
 - [Calculated Fields](#-calculated-fields)
 - [Data Analysis & Insights](#-data-analysis--insights)
-- [Dashboard Overview](#-dashboard-overview)
+- [Dashboard](#-dashboard)
 
 
 ## Project Description
