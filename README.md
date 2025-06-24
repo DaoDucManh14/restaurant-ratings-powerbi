@@ -6,6 +6,8 @@
 - [ER Diagram](#er-diagram)
 - [Data Cleaning](#data-cleaning)
 - [Calculated Fields (DAX)](#calculated-fields-dax)
+- [Tools Used](#tools-used)
+- [Key Questions](#key-question)
 - [Data Analysis & Insights](#data-analysis--insights)
 - [Dashboards](#dashboards)
 
