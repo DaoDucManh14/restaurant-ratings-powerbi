@@ -11,6 +11,7 @@
 
 
 ## Project Description
+Restaurant ratings in Mexico by real consumers from 2012, including additional information about each restaurant and their cuisines, and each consumer and their preferences.
 This project uses Power BI to analyze restaurant review data, aiming to uncover patterns in customer satisfaction and dissatisfaction. The focus is on food quality, service experience, pricing concerns, and customer behavior to provide actionable insights.
 
 ## Dataset Description
@@ -69,6 +70,7 @@ This project uses Power BI to analyze restaurant review data, aiming to uncover 
 - `cuisine` – Types of cuisine served at the restaurant 
 
 ## ER Diagram
+![Restaurant-ratings drawio](https://github.com/DaoDucManh14/restaurant-ratings-powerbi/blob/main/screenshots/Er_diagram.png)
 
 ## Data Cleaning
 
@@ -83,35 +85,51 @@ This project uses Power BI to analyze restaurant review data, aiming to uncover 
 
 The following calculated columns were created to group values and support better filtering and insights.
 
-**AgeGroup** 
-= SWITCH(TRUE(), `consumers[Age]` <= 18, "Children and Adolescents",  
-`consumers[Age]` <= 30, "Young Adults",  
-`consumers[Age]` <= 45, "Adults",  
-`consumers[Age]` <= 60, "Middle-aged Adults",  
-"Seniors")
-
-**Service_Rating_Category** 
-= SWITCH(TRUE(),  
-`ratings[Service_Rating]` = 0, "Unsatisfactory",  
-`ratings[Service_Rating]` = 1, "Satisfactory",  
-"Highly Satisfactory")
-
-**Overall_Rating_Category** 
-= SWITCH(TRUE(),  
-`ratings[Overall_Rating]` = 0, "Unsatisfactory",  
-`ratings[Overall_Rating]` = 1, "Satisfactory",  
-"Highly Satisfactory")
-
-**Food_Rating_Category** 
-= SWITCH(TRUE(),  
-`ratings[Food_Rating]` = 0, "Unsatisfactory",  
-`ratings[Food_Rating]` = 1, "Satisfactory",  
-"Highly Satisfactory")
-
+#### Age Group
+```
+AgeGroup = 
+SWITCH(
+    TRUE(),
+    consumers[Age] <= 18, "Children and Adolescents",
+    consumers[Age] <= 30, "Young Adults",
+    consumers[Age] <= 45, "Adults",
+    consumers[Age] <= 60, "Middle-aged Adults",
+    "Seniors"
+)
+```
+#### Service Rating Category
+```
+Service_Rating_Category = SWITCH(
+    TRUE(),
+    ratings[Service_Rating] = 0, "Unsatisfactory",
+    ratings[Service_Rating] = 1, "Satisfactory",
+    "Highly Satisfactory"
+)
+```
+#### Overall Rating Category
+```
+Overall_Rating_Category = SWITCH(
+    TRUE(),
+    ratings[Overall_Rating] = 0, "Unsatisfactory",
+    ratings[Overall_Rating] = 1, "Satisfactory",
+    "Highly Satisfactory"
+)
+```
+#### Food Rating Category
+```
+Food_Rating_Category = SWITCH(
+    TRUE(),
+    ratings[Food_Rating] = 0, "Unsatisfactory",
+    ratings[Food_Rating] = 1, "Satisfactory",
+    "Highly Satisfactory"
+)
+```
 ## Tools Used
-- Power BI for data visualization and dashboard creation  
-- SQL for data cleaning and data transformations  
-- Excel for preliminary data formatting  
+
+- **Power BI**: Used for building interactive dashboards and data visualizations.
+- **Power Query**: Utilized for data cleaning, transformation, and combining multiple datasets.
+- **DAX (Data Analysis Expressions)**: Applied to create calculated columns and measures for advanced insights.
+- **Microsoft Excel**: Initial data inspection and formatting before importing to Power BI.
 
 
 ## Key Questions
@@ -124,18 +142,26 @@ The following calculated columns were created to group values and support better
 
 The analysis revealed several key patterns regarding restaurant performance and consumer satisfaction:
 
-- **Food and Service are the core drivers of satisfaction**: Restaurants that consistently receive high ratings in both `Food_Rating` and `Service_Rating` are also the ones with the best `Overall_Rating`. Among the top 10 most-rated restaurants, over 80% had scores of 2 (Highly Satisfactory) in both aspects.
+### 1. Restaurants with High Food & Service Ratings Dominate the Top
 
-- **Unsatisfactory service is the leading cause of poor ratings**: More than 60% of `Overall_Rating = 0` cases are associated with a `Service_Rating = 0`, even if the food was rated as satisfactory. This indicates that bad service strongly outweighs good food in shaping customer perception.
+- Restaurants that rank highest in overall customer satisfaction consistently receive a score of 2 (Highly Satisfactory) in both `Food_Rating` and `Service_Rating`.
+- This confirms that food quality and service are the two most critical dimensions influencing overall ratings.
 
-- **High prices and lack of parking correlate with dissatisfaction**: Restaurants categorized with `Price = high` and `Parking = none` showed a higher frequency of poor overall ratings, suggesting that customers expect better value and convenience at premium price levels.
+### 2. Poor Service is the Main Reason for Low Ratings
 
-- **Young adults are the most frequent reviewers**: The `AgeGroup = Young Adults (19–30)` represents the largest share of reviewers. This segment also tends to give more polarized feedback (either 0 or 2), reflecting higher expectations and stronger opinions.
+- The majority of negative overall ratings (score = 0) are strongly correlated with a `Service_Rating = 0`.
+- In contrast, customers are more forgiving of food quality than of poor service, suggesting service has a larger impact on user perception.
 
-- **Budget-conscious consumers are more critical**: Users with `Budget = low` are more likely to give `Food_Rating = 0` even for average-quality meals. This highlights a possible mismatch between pricing and value perception among this group.
+### 3. Price and Parking Influence Negative Feedback
 
+- Restaurants with `Price = high` or no parking options (`Parking = none`) are more likely to receive lower ratings.
+- This implies that customers expect higher value and better convenience when paying premium prices.
 
+### 4. Consumer Demographics Affect Rating Behavior
 
+- **Young Adults (19–30 years old)** are the most active reviewers and are more likely to give polarized feedback (either 0 or 2), especially when their expectations aren’t met.
+- **Consumers with a low budget** are more critical of food quality, often rating food as unsatisfactory even when overall ratings are decent.
+- **Frequent social drinkers** tend to give more favorable reviews, especially in restaurants that offer alcohol service.
 
 ## Dashboards
 
@@ -147,15 +173,3 @@ The analysis revealed several key patterns regarding restaurant performance and 
 
 ### Customer Behavior Analysis  
 ![Customer Behavior](https://github.com/DaoDucManh14/restaurant-ratings-powerbi/blob/main/screenshots/customer_behavior.jpg?raw=true)
-
-
-
-## Project Structure
-
-- `report.pbix` – Power BI report file
-- `README.md` – Project documentation
-- `screenshots/` – Folder containing dashboard images:
-  - `overview.jpg`
-  - `negative_factors.jpg`
-  - `customer_behavior.jpg`
-
