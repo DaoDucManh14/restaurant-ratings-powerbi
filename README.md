@@ -7,7 +7,7 @@
 - [Data Cleaning](#data-cleaning)
 - [Calculated Fields (DAX)](#calculated-fields-dax)
 - [Tools Used](#tools-used)
-- [Key Questions](#key-question)
+- [Key Questions](#key-questions)
 - [Data Analysis & Insights](#data-analysis--insights)
 - [Dashboards](#dashboards)
 
