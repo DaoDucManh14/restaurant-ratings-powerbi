@@ -66,7 +66,9 @@ This project uses Power BI to analyze restaurant review data, aiming to uncover 
 ### 5. Restaurant Cuisines
 
 - `restaurant_id` – Unique identifier for each restaurant  
-- `cuisine` – Types of cuisine served at the restaurant  
+- `cuisine` – Types of cuisine served at the restaurant 
+
+## ER Diagram
 
 ## Data Cleaning
 
