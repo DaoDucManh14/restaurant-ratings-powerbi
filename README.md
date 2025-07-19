@@ -175,3 +175,7 @@ The analysis revealed several key patterns regarding restaurant performance and 
 
 ### Customer Behavior Analysis  
 ![Customer Behavior](https://github.com/DaoDucManh14/restaurant-ratings-powerbi/blob/main/screenshots/customer_behavior.jpg?raw=true)
+
+### Final Reviews
+![Reviews](https://github.com/DaoDucManh14/restaurant-ratings-powerbi/blob/main/screenshots/Reviews.jpg)
+
